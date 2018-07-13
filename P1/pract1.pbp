@@ -1,0 +1,25 @@
+'****************************************************************
+'*  Name    : Hello World.BAS                                   *
+'*  Author  : Jesús Arturo Hdz. Soberón                         *
+'*  Notice  : Copyright (c) 2018 [Labs]                         *
+'*          : All Rights Reserved                               *
+'*  Date    : 12/07/2018                                        *
+'*  Version : 1.0                                               *
+'*  Notes   : Turn ON and OFF a Led, shows basic programming    *
+'*          : with MicroCode Studio, PICBASIC PRO               *
+'****************************************************************
+
+Define OSC 10  ; Definir que se trabajará con 10MHz.
+
+TRISB = %11111111 ; configurar los  8bits del puerto B como salida
+PORTB = %00000000 ; limpiar puerto, todo apagado
+
+inicio:           ; etiqueta
+high portb.0      ; pone en alto el pin RB0
+pause 1000       ; 1000ms = 1seg
+low portb.0      ; pone en bajo el pin RB0
+pause 1000
+goto inicio      ; brinca a la etiqueta inicio
+
+end
+
