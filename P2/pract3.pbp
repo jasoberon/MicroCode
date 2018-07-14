@@ -1,0 +1,33 @@
+'****************************************************************
+'*  Name    : secuencial Leds                                   *
+'*  Author  : Jesús Arturo Hdz. Soberón                         *
+'*  Notice  : Copyright (c) 2018 [Labs]                         *
+'*          : All Rights Reserved                               *
+'*  Date    : 12/07/2018                                        *
+'*  Version : 1.0                                               *
+'*  Notes   : Turn ON and OFF a secuencial Leds                 *
+'*          : with MicroCode Studio, PICBASIC PRO               *
+'****************************************************************
+
+Define OSC 10  ; Definir que se trabajará con 10MHz.
+      
+TRISB = %00000000   ; configurar los  8bits del puerto B como salida
+PORTB = %00000000   ; limpiar puerto, todo apagado
+x var byte          ;variable para el For...next
+y var byte          ;variable para el puerto
+x = 0
+y = 1
+
+inicio:             ; etiqueta
+   for x = 1 to 8   ; 5 bits del puerto A
+
+PORTB = y           ; saca por el puerto el valor de y en binario
+pause 500           ; 1000ms = 1seg
+y = y * 2           ;para obtener la potencia en base 2
+next x             
+
+y = 1               ;para que inicie en 1 de nuevo 
+goto inicio         ; brinca a la etiqueta inicio
+
+end
+
