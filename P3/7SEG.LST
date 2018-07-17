@@ -1,4 +1,4 @@
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  1
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -8,7 +8,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00002 ; PICBASIC PRO(TM) Compiler 2.60, (c) 1998, 2009 microEngineering Labs, Inc. All Rights Reserved. 
   00000001            00003 _USED                   EQU     1
                       00004 
-                      00005         INCLUDE "C:\MICROC~1\PBP\18F4550.INC"
+                      00005         INCLUDE "C:\PBP\18F4550.INC"
                       00001 ;****************************************************************
                       00002 ;*  18F4550.INC                                                 *
                       00003 ;*                                                              *
@@ -43,8 +43,8 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00006 
                       00007 
                       00008 ; Define statements.
-                      00009 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00012   Define OSC 10  ; Definir que se 
-                            trabajará con 10MHz.
+                      00009 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00012   Define OSC 10  ; Definir que se trabajar
+                            á con 10MHz.
                       00010 #define         OSC              10  ; Definir que se trabajará con 10MHz.
                       00011 
   00000000            00012 RAM_START                       EQU     00000h
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   00000200            00019 BANK2_START                     EQU     00200h
   000002FF            00020 BANK2_END                       EQU     002FFh
   00000300            00021 BANK3_START                     EQU     00300h
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  2
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -75,78 +75,75 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   00000000            00031 BANKA_START                     EQU     00000h
   0000005F            00032 BANKA_END                       EQU     0005Fh
                       00033 
-                      00034 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00028   A00000  FLAGS   VAR     BYTE BANKA SYSTEM       ' Static flags
+                      00034 ; C:\PBP\PBPPIC18.RAM           00028   A00000  FLAGS   VAR     BYTE BANKA SYSTEM       ' Static flags
   00000000            00035 FLAGS                           EQU     RAM_START + 000h
-                      00036 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00012   A00001  R0      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00036 ; C:\PBP\PBPPIC18.RAM           00012   A00001  R0      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   00000001            00037 R0                              EQU     RAM_START + 001h
-                      00038 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00013   A00003  R1      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00038 ; C:\PBP\PBPPIC18.RAM           00013   A00003  R1      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   00000003            00039 R1                              EQU     RAM_START + 003h
-                      00040 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00014   A00005  R2      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00040 ; C:\PBP\PBPPIC18.RAM           00014   A00005  R2      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   00000005            00041 R2                              EQU     RAM_START + 005h
-                      00042 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00015   A00007  R3      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00042 ; C:\PBP\PBPPIC18.RAM           00015   A00007  R3      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   00000007            00043 R3                              EQU     RAM_START + 007h
-                      00044 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00016   A00009  R4      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00044 ; C:\PBP\PBPPIC18.RAM           00016   A00009  R4      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   00000009            00045 R4                              EQU     RAM_START + 009h
-                      00046 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00017   A0000B  R5      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00046 ; C:\PBP\PBPPIC18.RAM           00017   A0000B  R5      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   0000000B            00047 R5                              EQU     RAM_START + 00Bh
-                      00048 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00018   A0000D  R6      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00048 ; C:\PBP\PBPPIC18.RAM           00018   A0000D  R6      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   0000000D            00049 R6                              EQU     RAM_START + 00Dh
-                      00050 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00019   A0000F  R7      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00050 ; C:\PBP\PBPPIC18.RAM           00019   A0000F  R7      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   0000000F            00051 R7                              EQU     RAM_START + 00Fh
-                      00052 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00020   A00011  R8      VAR     WORD BANKA SYSTEM       ' System Registe
+                      00052 ; C:\PBP\PBPPIC18.RAM           00020   A00011  R8      VAR     WORD BANKA SYSTEM       ' System Registe
                             r
   00000011            00053 R8                              EQU     RAM_START + 011h
-                      00054 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00027   A00013  GOP     VAR     BYTE BANKA SYSTEM       ' Gen Op Paramet
+                      00054 ; C:\PBP\PBPPIC18.RAM           00027   A00013  GOP     VAR     BYTE BANKA SYSTEM       ' Gen Op Paramet
                             er
   00000013            00055 GOP                             EQU     RAM_START + 013h
-                      00056 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00023   A00014  RM1     VAR     BYTE BANKA SYSTEM       ' Pin 1 Mask
+                      00056 ; C:\PBP\PBPPIC18.RAM           00023   A00014  RM1     VAR     BYTE BANKA SYSTEM       ' Pin 1 Mask
   00000014            00057 RM1                             EQU     RAM_START + 014h
-                      00058 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00026   A00015  RM2     VAR     BYTE BANKA SYSTEM       ' Pin 2 Mask
+                      00058 ; C:\PBP\PBPPIC18.RAM           00026   A00015  RM2     VAR     BYTE BANKA SYSTEM       ' Pin 2 Mask
   00000015            00059 RM2                             EQU     RAM_START + 015h
-                      00060 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00021   A00016  RR1     VAR     BYTE BANKA SYSTEM       ' Pin 1 Register
+                      00060 ; C:\PBP\PBPPIC18.RAM           00021   A00016  RR1     VAR     BYTE BANKA SYSTEM       ' Pin 1 Register
   00000016            00061 RR1                             EQU     RAM_START + 016h
-                      00062 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00024   A00017  RR2     VAR     BYTE BANKA SYSTEM       ' Pin 2 Register
+                      00062 ; C:\PBP\PBPPIC18.RAM           00024   A00017  RR2     VAR     BYTE BANKA SYSTEM       ' Pin 2 Register
   00000017            00063 RR2                             EQU     RAM_START + 017h
-                      00064 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00022   A00018  RS1     VAR     BYTE BANKA SYSTEM       ' Pin 1 Bank
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  3
+                      00064 ; C:\PBP\PBPPIC18.RAM           00022   A00018  RS1     VAR     BYTE BANKA SYSTEM       ' Pin 1 Bank
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
   00000018            00065 RS1                             EQU     RAM_START + 018h
-                      00066 ; C:\MICROC~1\PBP\PBPPIC18.RAM  00025   A00019  RS2     VAR     BYTE BANKA SYSTEM       ' Pin 2 Bank
+                      00066 ; C:\PBP\PBPPIC18.RAM           00025   A00019  RS2     VAR     BYTE BANKA SYSTEM       ' Pin 2 Bank
   00000019            00067 RS2                             EQU     RAM_START + 019h
-                      00068 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00014   A0001A  x var byte     ; se decl
-                            ara variable x como byte (0 - 255)
-  0000001A            00069 _x                              EQU     RAM_START + 01Ah
-                      00070 ; C:\MICROC~1\PBP\18F4550.BAS   00026   PORTL   VAR     PORTB
-  00000F81            00071 _PORTL                          EQU      PORTB
-                      00072 ; C:\MICROC~1\PBP\18F4550.BAS   00027   PORTH   VAR     PORTC
-  00000F82            00073 _PORTH                          EQU      PORTC
-                      00074 ; C:\MICROC~1\PBP\18F4550.BAS   00028   TRISL   VAR     TRISB
-  00000F93            00075 _TRISL                          EQU      TRISB
-                      00076 ; C:\MICROC~1\PBP\18F4550.BAS   00029   TRISH   VAR     TRISC
-  00000F94            00077 _TRISH                          EQU      TRISC
-                      00078 
-                      00079 ; Constants.
-  00000400            00080 _USBMEMORYADDRESS               EQU     00400h
+                      00068 ; C:\PBP\18F4550.BAS            00026   PORTL   VAR     PORTB
+  00000F81            00069 _PORTL                          EQU      PORTB
+                      00070 ; C:\PBP\18F4550.BAS            00027   PORTH   VAR     PORTC
+  00000F82            00071 _PORTH                          EQU      PORTC
+                      00072 ; C:\PBP\18F4550.BAS            00028   TRISL   VAR     TRISB
+  00000F93            00073 _TRISL                          EQU      TRISB
+                      00074 ; C:\PBP\18F4550.BAS            00029   TRISH   VAR     TRISC
+  00000F94            00075 _TRISH                          EQU      TRISC
+                      00076 
+                      00077 ; Constants.
+  00000400            00078 _USBMEMORYADDRESS               EQU     00400h
+                      00079 
+                      00080 ; EEPROM data.
                       00081 
-                      00082 ; EEPROM data.
-                      00083 
-                      00084 
-                      00085         INCLUDE "PRACT4.MAC"
+                      00082 
+                      00083         INCLUDE "7SEG.MAC"
                       00001 
-                      00075         LIST
-                      00086         INCLUDE "C:\MICROC~1\PBP\PBPPIC18.LIB"
+                      00039         LIST
+                      00084         INCLUDE "C:\PBP\PBPPIC18.LIB"
                       00001 ;******************************************************************
                       00002 ;*  PBPPIC18.LIB                                                  *
                       00003 ;*                                                                *
@@ -162,7 +159,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       01182   LIST
 000000                01183     ORG RESET_ORG               ; Reset vector at 0
                       01192   LIST
-000000 EF41 F000      01193         goto    INIT            ; Finish initialization
+000000 EF23 F000      01193         goto    INIT            ; Finish initialization
                       06318   LIST
 000004 6A04           06319 PAUSE   clrf    R1 + 1
 000006 6E03           06320 PAUSEL  movwf   R1
@@ -170,20 +167,20 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00000A 0603           06322         decf    R1, F           ; 1
 00000C 5A04           06323         subwfb  R1 + 1, F       ; 1
 00000E A0D8           06324         btfss   STATUS, C       ; 2
-000010 EF3E F000      06325         goto    DUNN
+000010 EF20 F000      06325         goto    DUNN
 000014 0E03           06326         movlw   (PAUSE_DELAY) >> 8      ; 1
 000016 6E02           06327         movwf   R0 + 1          ; 1
 000018 0EE5           06328         movlw   low (PAUSE_DELAY)       ; 1
 00001A D802           06329         rcall   PAUSEUSL        ; -2 (PAUSEUSL gives you 2 less than you ask for)
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  4
+00001C D7F5           06330         bra     pauseloop       ; 2
+                      06440   LIST
+00001E 6A02           06441 PAUSEUS clrf    R0 + 1          ; 1
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-00001C D7F5           06330         bra     pauseloop       ; 2
-                      06440   LIST
-00001E 6A02           06441 PAUSEUS clrf    R0 + 1          ; 1
 000020 0FF7           06442 PAUSEUSL addlw  -9              ; 1 Subtract overhead
 000022 6E01           06443         movwf   R0              ; 1
 000024 0EFE           06444         movlw   -2              ; 1
@@ -205,79 +202,48 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00003A D000           06455         bra     $ + 2           ; 0 / 2
 00003C D000           06456         bra     $ + 2           ; 0 / 2
 00003E 0012           06457 pauseusdone return              ; 2 + 3 (call + setup)
-                      07720   LIST
-000040 5003           07721 MUL     movf    R1, W
-000042 0207           07722         mulwf   R3              ; R1 * R3 = PRODHL
-000044 CFF3 F005      07723         movff   PRODL, R2
-000048 CFF4 F006      07724         movff   PRODH, R2 + 1
-                      07725 
-00004C 5004           07726         movf    R1 + 1, W
-00004E 0208           07727         mulwf   R3 + 1          ; R1 + 1 * R3 + 1 = PRODHL
-000050 CFF3 F001      07728         movff   PRODL, R0
-000054 CFF4 F002      07729         movff   PRODH, R0 + 1
-                      07730 
-                      07731 ;       movf    R1 + 1, W       ; W still has R1 + 1 from above
-000058 0207           07732         mulwf   R3              ; R1 + 1 * R3 = PRODHL
-00005A 50F3           07733         movf    PRODL, W        ; Add cross products
-00005C 2606           07734         addwf   R2 + 1, F
-00005E 50F4           07735         movf    PRODH, W
-000060 2201           07736         addwfc  R0, F
-000062 6AE8           07737         clrf    WREG
-000064 2202           07738         addwfc  R0 + 1, F
-                      07739 
-000066 5003           07740         movf    R1, W
-000068 0208           07741         mulwf   R3 + 1          ; R1 * R3 + 1 = PRODHL
-00006A 50F3           07742         movf    PRODL, W        ; Add cross products
-00006C 2606           07743         addwf   R2 + 1, F
-00006E 50F4           07744         movf    PRODH, W
-000070 2201           07745         addwfc  R0, F
-000072 6AE8           07746         clrf    WREG
-000074 2202           07747         addwfc  R0 + 1, F
-                      07748 
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  5
+                      07786   LIST
+000040 0100           07787 DUNN    movlb   0               ; 1 Reset banks to 0
+                      07788 DUNN5   CLRWDT?NOP              ; 1 Hit Watchdog timer
+                          M     ifndef NO_CLRWDT
+000042 0004               M         clrwdt
+                          M     else
+                          M         nop
+                          M     endif
+000044 0012           07789         return                  ; 2 Done
+                      07802   LIST
+000046                07803 INIT
+                      07839   LIST
+000046                07840 main
+                      00085 
+                      00086 
+                      00087 ; C:\PBP\18F4550.BAS            00012   BANKA   $0000, $005F
+                      00088 ; C:\PBP\18F4550.BAS            00013   BANK0   $0060, $00FF
+                      00089 ; C:\PBP\18F4550.BAS            00014   BANK1   $0100, $01FF
+                      00090 ; C:\PBP\18F4550.BAS            00015   BANK2   $0200, $02FF
+                      00091 ; C:\PBP\18F4550.BAS            00016   BANK3   $0300, $03FF
+                      00092 ; C:\PBP\18F4550.BAS            00017   BANK4   $0400, $04FF
+                      00093 ; C:\PBP\18F4550.BAS            00018   BANK5   $0500, $05FF
+                      00094 ; C:\PBP\18F4550.BAS            00019   BANK6   $0600, $06FF
+                      00095 ; C:\PBP\18F4550.BAS            00020   BANK7   $0700, $07FF
+                      00096 ; C:\PBP\18F4550.BAS            00022   LIBRARY "PBPPIC18"
+                      00097 
+                      00098 ; C:\PBP\18F4550.BAS            00024           include "PIC18EXT.BAS"
+                      00099 
+                      00100 ; C:\PBP\18F4550.BAS            00031           include "PBPPIC18.RAM"
+                      00101 ; C:\PBP\18F4550.BAS            00032   USBMEMORYADDRESS Con    $400    ' USB RAM starts here
+                      00102 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00012   Define OSC 10  ; Definir que se trabajar
+                            á con 10MHz.
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  5
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000076 5005           07749         movf    R2, W           ; Get low byte to W
-000078 EF3E F000      07750         goto    DUNN
-                      07786   LIST
-00007C 0100           07787 DUNN    movlb   0               ; 1 Reset banks to 0
-                      07788 DUNN5   CLRWDT?NOP              ; 1 Hit Watchdog timer
-                          M     ifndef NO_CLRWDT
-00007E 0004               M         clrwdt
-                          M     else
-                          M         nop
-                          M     endif
-000080 0012           07789         return                  ; 2 Done
-                      07802   LIST
-000082                07803 INIT
-                      07839   LIST
-000082                07840 main
-                      00087 
-                      00088 
-                      00089 ; C:\MICROC~1\PBP\18F4550.BAS   00012   BANKA   $0000, $005F
-                      00090 ; C:\MICROC~1\PBP\18F4550.BAS   00013   BANK0   $0060, $00FF
-                      00091 ; C:\MICROC~1\PBP\18F4550.BAS   00014   BANK1   $0100, $01FF
-                      00092 ; C:\MICROC~1\PBP\18F4550.BAS   00015   BANK2   $0200, $02FF
-                      00093 ; C:\MICROC~1\PBP\18F4550.BAS   00016   BANK3   $0300, $03FF
-                      00094 ; C:\MICROC~1\PBP\18F4550.BAS   00017   BANK4   $0400, $04FF
-                      00095 ; C:\MICROC~1\PBP\18F4550.BAS   00018   BANK5   $0500, $05FF
-                      00096 ; C:\MICROC~1\PBP\18F4550.BAS   00019   BANK6   $0600, $06FF
-                      00097 ; C:\MICROC~1\PBP\18F4550.BAS   00020   BANK7   $0700, $07FF
-                      00098 ; C:\MICROC~1\PBP\18F4550.BAS   00022   LIBRARY "PBPPIC18"
-                      00099 
-                      00100 ; C:\MICROC~1\PBP\18F4550.BAS   00024           include "PIC18EXT.BAS"
-                      00101 
-                      00102 ; C:\MICROC~1\PBP\18F4550.BAS   00031           include "PBPPIC18.RAM"
-                      00103 ; C:\MICROC~1\PBP\18F4550.BAS   00032   USBMEMORYADDRESS Con    $400    ' USB RAM starts here
-                      00104 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00012   Define OSC 10  ; Definir que se 
-                            trabajará con 10MHz.
-                      00105 
-                      00106 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00016   TRISB = %00000000   ; configurar
-                             los 8bits del puerto B como salida
-                      00107         MOVE?CB 000h, TRISB
+                      00103 
+                      00104 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00014   TRISB = %00000000   ; configurar los  8b
+                            its del puerto B como salida
+                      00105         MOVE?CB 000h, TRISB
                           M         CHK?RP  TRISB
                           M     if (((TRISB) & 8000h) != PREV_ALT)
                           M       if ((TRISB) & 8000h)
@@ -293,14 +259,8 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M PREV_BANK = high (TRISB)
                           M       endif
                           M     endif
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  6
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M     if (low (000h) == 0)
-000082 6A93               M         clrf    TRISB
+000046 6A93               M         clrf    TRISB
                           M     else
                           M       if (low (000h) == 255)
                           M         setf    TRISB
@@ -309,10 +269,10 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         movwf   TRISB
                           M       endif
                           M     endif
-                      00108 
-                      00109 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00017   PORTB = %00000000   ; limpiar pu
-                            erto, todo apagado
-                      00110         MOVE?CB 000h, PORTB
+                      00106 
+                      00107 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00015   PORTB = %00000000   ; limpiar puerto, to
+                            do apagado
+                      00108         MOVE?CB 000h, PORTB
                           M         CHK?RP  PORTB
                           M     if (((PORTB) & 8000h) != PREV_ALT)
                           M       if ((PORTB) & 8000h)
@@ -329,19 +289,25 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M     endif
                           M     if (low (000h) == 0)
-000084 6A81               M         clrf    PORTB
+000048 6A81               M         clrf    PORTB
                           M     else
                           M       if (low (000h) == 255)
                           M         setf    PORTB
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       else
                           M         movlw   low (000h)
                           M         movwf   PORTB
                           M       endif
                           M     endif
+                      00109 
+                      00110 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00017   INICIO:
                       00111 
-                      00112 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00019   inicio:             ; etiqueta
-                      00113 
-                      00114         LABEL?L _inicio 
+                      00112         LABEL?L _INICIO 
                           M         RST?RP
                           M     if (PREV_ALT != 0)
                           M         bcf     WDTCON, ADSHR
@@ -352,95 +318,54 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M PREV_BANK = 0
                           M     endif
                           M     ifdef PM_USED
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  7
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         LALL
-                          M _inicio
+                          M _INICIO
                           M         XALL
                           M     else
-000086                    M _inicio
+00004A                    M _INICIO
                           M     endif
-                      00115 
-                      00116 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00021     for x = 1 to 255
-                      00117         MOVE?CB 001h, _x
-                          M         CHK?RP  _x
-                          M     if (((_x)    & 8000h) != PREV_ALT)
-                          M       if ((_x)    & 8000h)
+                      00113 
+                      00114 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00018   PORTB=%10111111    ;CERO
+                      00115         MOVE?CB 0BFh, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
                           M         bsf     WDTCON, ADSHR
                           M       else
                           M         bcf     WDTCON, ADSHR
                           M       endif
-                          M PREV_ALT = (_x)    & 8000h
+                          M PREV_ALT = (PORTB) & 8000h
                           M     endif
-                          M     if ((((_x)    & 0fffh) > BANKA_END) & (((_x)    & 0fffh) < (0f01h + BANKA_END)))
-                          M       if (((_x)    & 0f00h) != (PREV_BANK << 8))
-                          M         movlb   high (_x)
-                          M PREV_BANK = high (_x)
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
                           M       endif
                           M     endif
-                          M     if (low (001h) == 0)
-                          M         clrf    _x
+                          M     if (low (0BFh) == 0)
+                          M         clrf    PORTB
                           M     else
-                          M       if (low (001h) == 255)
-                          M         setf    _x
+                          M       if (low (0BFh) == 255)
+                          M         setf    PORTB
                           M       else
-000086 0E01               M         movlw   low (001h)
-000088 6E1A               M         movwf   _x
+00004A 0EBF               M         movlw   low (0BFh)
+00004C 6E81               M         movwf   PORTB
                           M       endif
                           M     endif
-                      00118         LABEL?L L00001  
-                          M         RST?RP
-                          M     if (PREV_ALT != 0)
-                          M         bcf     WDTCON, ADSHR
-                          M PREV_ALT = 0
-                          M     endif
-                          M     if (PREV_BANK != 0)
-                          M         movlb   0
-                          M PREV_BANK = 0
-                          M     endif
-                          M     ifdef PM_USED
-                          M         LALL
-                          M L00001
-                          M         XALL
-                          M     else
-00008A                    M L00001
-                          M     endif
-                      00119         CMPGT?BCL       _x, 0FFh, L00002
-                          M     if ((0FFh) < 0)
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  8
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  7
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M         L?GOTO  L00002
-                          M     else
-                          M       if ((0FFh) < 0ffh)
-                          M         CLRWDT?
-                          M         MOVE?CA (0FFh) + 1
-                          M         CHK?RP  _x
-                          M         subwf   _x,  W
-                          M         BIT?GOTO 1, STATUS, C, L00002
-                          M       endif
-                          M     endif
-                      00120 
-                      00121 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00023   PORTB = x   ; pone en alto valor
-                             x
-                      00122         MOVE?BB _x, PORTB
-00008A C01A FF81          M         movff   _x,  PORTB
-                      00123 
-                      00124 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00024   pause 500           ; 1000ms = 1
-                            seg
-                      00125         PAUSE?C 001F4h
-                          M     if (((001F4h) >> 8) == 0)
-                          M         MOVE?CA 001F4h
+                      00116 
+                      00117 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00019   PAUSE 1000         
+                      00118         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
                           M         L?CALL  PAUSE
                           M     else
-                          M         MOVE?CB (001F4h) >> 8, R1 + 1
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
                           M         CHK?RP  R1 + 1
                           M     if (((R1 + 1) & 8000h) != PREV_ALT)
                           M       if ((R1 + 1) & 8000h)
@@ -456,26 +381,124 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M PREV_BANK = high (R1 + 1)
                           M       endif
                           M     endif
-                          M     if (low ((001F4h) >> 8) == 0)
+                          M     if (low ((003E8h) >> 8) == 0)
                           M         clrf    R1 + 1
                           M     else
-                          M       if (low ((001F4h) >> 8) == 255)
+                          M       if (low ((003E8h) >> 8) == 255)
                           M         setf    R1 + 1
                           M       else
-00008E 0E01               M         movlw   low ((001F4h) >> 8)
-000090 6E04               M         movwf   R1 + 1
+00004E 0E03               M         movlw   low ((003E8h) >> 8)
+000050 6E04               M         movwf   R1 + 1
                           M       endif
                           M     endif
-                          M         MOVE?CA low (001F4h)
-000092 0EF4               M         movlw   low (low (001F4h))
+                          M         MOVE?CA low (003E8h)
+000052 0EE8               M         movlw   low (low (003E8h))
                           M         L?CALL  PAUSEL
                           M         RST?RP
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE  9
+                          M     if (PREV_ALT != 0)
+                          M         bcf     WDTCON, ADSHR
+                          M PREV_ALT = 0
+                          M     endif
+                          M     if (PREV_BANK != 0)
+                          M         movlb   0
+                          M PREV_BANK = 0
+                          M     endif
+                          M 
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
+                          M       else
+                          M         if ((PAUSEL) > $)
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  8
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M         call    PAUSEL
+                          M         else
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
+                          M           else
+000054 DFD8               M         rcall   PAUSEL
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M     endif
+                      00119 
+                      00120 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00020   PORTB=%00000110    ;UNO
+                      00121         MOVE?CB 006h, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (PORTB) & 8000h
+                          M     endif
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
+                          M       endif
+                          M     endif
+                          M     if (low (006h) == 0)
+                          M         clrf    PORTB
+                          M     else
+                          M       if (low (006h) == 255)
+                          M         setf    PORTB
+                          M       else
+000056 0E06               M         movlw   low (006h)
+000058 6E81               M         movwf   PORTB
+                          M       endif
+                          M     endif
+                      00122 
+                      00123 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00021   PAUSE 1000 
+                      00124         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M       endif
+                          M PREV_ALT = (R1 + 1) & 8000h
+                          M     endif
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
+                          M       endif
+                          M     endif
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
+                          M     else
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+00005A 0E03               M         movlw   low ((003E8h) >> 8)
+00005C 6E04               M         movwf   R1 + 1
+                          M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+00005E 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
+                          M         RST?RP
                           M     if (PREV_ALT != 0)
                           M         bcf     WDTCON, ADSHR
                           M PREV_ALT = 0
@@ -497,108 +520,88 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M           if ((PAUSEL) < ($ - 3ffh))
                           M         call    PAUSEL
                           M           else
-000094 DFB8               M         rcall   PAUSEL
+000060 DFD2               M         rcall   PAUSEL
                           M           endif
                           M         endif
                           M       endif
                           M     endif
                           M     endif
-                      00126 
-                      00127 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00025   x = x * 2   ; potencia 2
-                      00128         MUL?BCB _x, 002h, _x
-                          M         MOVE?BW _x,  R3
-                          M         MOVE?BB _x,  R3
-000096 C01A F007          M         movff   _x,  R3
-                          M         CHK?RP  R3
-                          M     if (((R3)    & 8000h) != PREV_ALT)
-                          M       if ((R3)    & 8000h)
-                          M         bsf     WDTCON, ADSHR
-                          M       else
-                          M         bcf     WDTCON, ADSHR
-                          M       endif
-                          M PREV_ALT = (R3)    & 8000h
-                          M     endif
-                          M     if ((((R3)    & 0fffh) > BANKA_END) & (((R3)    & 0fffh) < (0f01h + BANKA_END)))
-                          M       if (((R3)    & 0f00h) != (PREV_BANK << 8))
-                          M         movlb   high (R3)
-                          M PREV_BANK = high (R3)
-                          M       endif
-                          M     endif
-00009A 6A08               M         clrf    (R3)   + 1
-                          M         MOVE?CW 002h, R1
-                          M     ifdef USE_LINKER
-                          M         CHK?RP  R1
-                          M         movlw   low (002h)
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 10
+                      00125 
+                      00126 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00022   PORTB=%01011011    ;DOS
+                      00127         MOVE?CB 05Bh, PORTB
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 10
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M         movwf   R1
-                          M         movlw   high (002h)
-                          M         movwf   (R1)   + 1
-                          M     else
-                          M         MOVE?CB low (002h), R1
-                          M         CHK?RP  R1
-                          M     if (((R1)    & 8000h) != PREV_ALT)
-                          M       if ((R1)    & 8000h)
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
                           M         bsf     WDTCON, ADSHR
                           M       else
                           M         bcf     WDTCON, ADSHR
                           M       endif
-                          M PREV_ALT = (R1)    & 8000h
+                          M PREV_ALT = (PORTB) & 8000h
                           M     endif
-                          M     if ((((R1)    & 0fffh) > BANKA_END) & (((R1)    & 0fffh) < (0f01h + BANKA_END)))
-                          M       if (((R1)    & 0f00h) != (PREV_BANK << 8))
-                          M         movlb   high (R1)
-                          M PREV_BANK = high (R1)
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
                           M       endif
                           M     endif
-                          M     if (low (low (002h)) == 0)
-                          M         clrf    R1
+                          M     if (low (05Bh) == 0)
+                          M         clrf    PORTB
                           M     else
-                          M       if (low (low (002h)) == 255)
-                          M         setf    R1
+                          M       if (low (05Bh) == 255)
+                          M         setf    PORTB
                           M       else
-00009C 0E02               M         movlw   low (low (002h))
-00009E 6E03               M         movwf   R1
+000062 0E5B               M         movlw   low (05Bh)
+000064 6E81               M         movwf   PORTB
                           M       endif
                           M     endif
-                          M         MOVE?CB high (002h), (R1)  + 1
-                          M         CHK?RP  (R1) + 1
-                          M     if ((((R1) + 1) & 8000h) != PREV_ALT)
-                          M       if (((R1) + 1) & 8000h)
+                      00128 
+                      00129 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00023   PAUSE 1000 
+                      00130         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
                           M         bsf     WDTCON, ADSHR
                           M       else
                           M         bcf     WDTCON, ADSHR
                           M       endif
-                          M PREV_ALT = ((R1) + 1) & 8000h
+                          M PREV_ALT = (R1 + 1) & 8000h
                           M     endif
-                          M     if (((((R1) + 1) & 0fffh) > BANKA_END) & ((((R1) + 1) & 0fffh) < (0f01h + BANKA_END)))
-                          M       if ((((R1) + 1) & 0f00h) != (PREV_BANK << 8))
-                          M         movlb   high ((R1) + 1)
-                          M PREV_BANK = high ((R1) + 1)
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
                           M       endif
                           M     endif
-                          M     if (low (high (002h)) == 0)
-0000A0 6A04               M         clrf    (R1) + 1
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
                           M     else
-                          M       if (low (high (002h)) == 255)
-                          M         setf    (R1) + 1
-                          M       else
-                          M         movlw   low (high (002h))
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 11
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 11
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M         movwf   (R1) + 1
+                          M       else
+000066 0E03               M         movlw   low ((003E8h) >> 8)
+000068 6E04               M         movwf   R1 + 1
                           M       endif
                           M     endif
-                          M     endif
-                          M         L?CALL  MUL
+                          M         MOVE?CA low (003E8h)
+00006A 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
                           M         RST?RP
                           M     if (PREV_ALT != 0)
                           M         bcf     WDTCON, ADSHR
@@ -610,118 +613,197 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M 
                           M     ifdef USE_LINKER
-                          M         call    MUL
+                          M         call    PAUSEL
                           M     else
-                          M       if ((MUL)   < 1)
-                          M         call    MUL
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
                           M       else
-                          M         if ((MUL)   > $)
-                          M         call    MUL
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
                           M         else
-                          M           if ((MUL)   < ($ - 3ffh))
-                          M         call    MUL
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
                           M           else
-0000A2 DFCE               M         rcall   MUL
+00006C DFCC               M         rcall   PAUSEL
                           M           endif
                           M         endif
                           M       endif
                           M     endif
-                          M         MOVE?AB _x
-                          M         CHK?RP  _x
-                          M     if (((_x)    & 8000h) != PREV_ALT)
-                          M       if ((_x)    & 8000h)
+                          M     endif
+                      00131 
+                      00132 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00024   PORTB=%01001111    ;TRES
+                      00133         MOVE?CB 04Fh, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
                           M         bsf     WDTCON, ADSHR
                           M       else
                           M         bcf     WDTCON, ADSHR
                           M       endif
-                          M PREV_ALT = (_x)    & 8000h
+                          M PREV_ALT = (PORTB) & 8000h
                           M     endif
-                          M     if ((((_x)    & 0fffh) > BANKA_END) & (((_x)    & 0fffh) < (0f01h + BANKA_END)))
-                          M       if (((_x)    & 0f00h) != (PREV_BANK << 8))
-                          M         movlb   high (_x)
-                          M PREV_BANK = high (_x)
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
                           M       endif
-                          M     endif
-0000A4 6E1A               M         movwf   _x
-                      00129 
-                      00130 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00026   next x
-                      00131         NEXT?BCL        _x, 001h, L00001
-                          M     if ((001h) == 1)
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 12
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 12
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M         CHK?RP  _x
-                          M     if (((_x)    & 8000h) != PREV_ALT)
-                          M       if ((_x)    & 8000h)
+                          M     endif
+                          M     if (low (04Fh) == 0)
+                          M         clrf    PORTB
+                          M     else
+                          M       if (low (04Fh) == 255)
+                          M         setf    PORTB
+                          M       else
+00006E 0E4F               M         movlw   low (04Fh)
+000070 6E81               M         movwf   PORTB
+                          M       endif
+                          M     endif
+                      00134 
+                      00135 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00025   PAUSE 1000 
+                      00136         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
                           M         bsf     WDTCON, ADSHR
                           M       else
                           M         bcf     WDTCON, ADSHR
                           M       endif
-                          M PREV_ALT = (_x)    & 8000h
+                          M PREV_ALT = (R1 + 1) & 8000h
                           M     endif
-                          M     if ((((_x)    & 0fffh) > BANKA_END) & (((_x)    & 0fffh) < (0f01h + BANKA_END)))
-                          M       if (((_x)    & 0f00h) != (PREV_BANK << 8))
-                          M         movlb   high (_x)
-                          M PREV_BANK = high (_x)
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
                           M       endif
                           M     endif
-0000A6 2A1A               M         incf    _x,  F
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
                           M     else
-                          M         movlw   001h
-                          M         CHK?RP  _x
-                          M         addwf   _x,  F
-                          M     endif
-                          M     if ((001h) <= 255)
-                          M         BIT?GOTO 0, STATUS, C, L00001
-                          M     ifdef USE_LINKER
-                          M         CLRWDT?
-                          M     else
-                          M       if ($ == (L00001))
-                          M         CLRWDT?
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+000072 0E03               M         movlw   low ((003E8h) >> 8)
+000074 6E04               M         movwf   R1 + 1
                           M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+000076 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
+                          M         RST?RP
+                          M     if (PREV_ALT != 0)
+                          M         bcf     WDTCON, ADSHR
+                          M PREV_ALT = 0
+                          M     endif
+                          M     if (PREV_BANK != 0)
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 13
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         movlb   0
+                          M PREV_BANK = 0
                           M     endif
                           M 
-                          M     if (((STATUS) > BANKA_END) & ((STATUS) < (0f01h + BANKA_END)))
-                          M         bcf     STATUS, OV
-                          M         CHK?RP  STATUS
-                          M       if ((0)      == 0)
-                          M         btfss   STATUS, C
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
                           M       else
-                          M         btfsc   STATUS, C
-                          M       endif
-                          M         bsf     STATUS, OV
-                          M         RST?RP
-                          M       ifdef USE_LINKER
-                          M         btfsc   STATUS, OV
-                          M         goto    L00001
-                          M       else
-                          M         if ((L00001) < 1)
-                          M         btfsc   STATUS, OV
-                          M         goto    L00001
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
                           M         else
-                          M           if ((L00001) > $)
-                          M         btfsc   STATUS, OV
-                          M         goto    L00001
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
                           M           else
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 13
+000078 DFC6               M         rcall   PAUSEL
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M     endif
+                      00137 
+                      00138 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00026   PORTB=%01100110    ;CUATRO
+                      00139         MOVE?CB 066h, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (PORTB) & 8000h
+                          M     endif
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
+                          M       endif
+                          M     endif
+                          M     if (low (066h) == 0)
+                          M         clrf    PORTB
+                          M     else
+                          M       if (low (066h) == 255)
+                          M         setf    PORTB
+                          M       else
+00007A 0E66               M         movlw   low (066h)
+00007C 6E81               M         movwf   PORTB
+                          M       endif
+                          M     endif
+                      00140 
+                      00141 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00027   PAUSE 1000 
+                      00142         PAUSE?C 003E8h
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 14
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M             if ((L00001) < ($ - 7fh))
-                          M         btfsc   STATUS, OV
-                          M         goto    L00001
-                          M             else
-                          M         bov     L00001
-                          M             endif
-                          M           endif
-                          M         endif
-                          M       endif
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
                           M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (R1 + 1) & 8000h
+                          M     endif
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
+                          M       endif
+                          M     endif
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
+                          M     else
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+00007E 0E03               M         movlw   low ((003E8h) >> 8)
+000080 6E04               M         movwf   R1 + 1
+                          M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+000082 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
                           M         RST?RP
                           M     if (PREV_ALT != 0)
                           M         bcf     WDTCON, ADSHR
@@ -731,91 +813,554 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         movlb   0
                           M PREV_BANK = 0
                           M     endif
-                          M       if ((0)      == 0)
-0000A8 A0D8               M         btfss   STATUS, C
+                          M 
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
                           M       else
-                          M         btfsc   STATUS, C
-                          M       endif
-                          M       ifdef USE_LINKER
-                          M         goto    L00001
-                          M       else
-                          M         if ((L00001) < 1)
-                          M         goto    L00001
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
                           M         else
-                          M           if ((L00001) > $)
-                          M         goto    L00001
-                          M           else
-                          M             if ((L00001) < ($ - 3ffh))
-                          M         goto    L00001
-                          M             else
-0000AA D7EF               M         bra     L00001
-                          M             endif
-                          M           endif
-                          M         endif
-                          M       endif
-                          M     endif
-                          M     endif
-                      00132         LABEL?L L00002  
-                          M         RST?RP
-                          M     if (PREV_ALT != 0)
-                          M         bcf     WDTCON, ADSHR
-                          M PREV_ALT = 0
-                          M     endif
-                          M     if (PREV_BANK != 0)
-                          M         movlb   0
-                          M PREV_BANK = 0
-                          M     endif
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 14
+                          M           if ((PAUSEL) < ($ - 3ffh))
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 15
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M     ifdef PM_USED
-                          M         LALL
-                          M L00002
-                          M         XALL
-                          M     else
-0000AC                    M L00002
+                          M         call    PAUSEL
+                          M           else
+000084 DFC0               M         rcall   PAUSEL
+                          M           endif
+                          M         endif
+                          M       endif
                           M     endif
-                      00133 
-                      00134 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00028     x = 1;
-                      00135         MOVE?CB 001h, _x
-                          M         CHK?RP  _x
-                          M     if (((_x)    & 8000h) != PREV_ALT)
-                          M       if ((_x)    & 8000h)
+                          M     endif
+                      00143 
+                      00144 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00028   PORTB=%01101101    ;CINCO
+                      00145         MOVE?CB 06Dh, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
                           M         bsf     WDTCON, ADSHR
                           M       else
                           M         bcf     WDTCON, ADSHR
                           M       endif
-                          M PREV_ALT = (_x)    & 8000h
+                          M PREV_ALT = (PORTB) & 8000h
                           M     endif
-                          M     if ((((_x)    & 0fffh) > BANKA_END) & (((_x)    & 0fffh) < (0f01h + BANKA_END)))
-                          M       if (((_x)    & 0f00h) != (PREV_BANK << 8))
-                          M         movlb   high (_x)
-                          M PREV_BANK = high (_x)
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
                           M       endif
                           M     endif
-                          M     if (low (001h) == 0)
-                          M         clrf    _x
+                          M     if (low (06Dh) == 0)
+                          M         clrf    PORTB
                           M     else
-                          M       if (low (001h) == 255)
-                          M         setf    _x
+                          M       if (low (06Dh) == 255)
+                          M         setf    PORTB
                           M       else
-0000AC 0E01               M         movlw   low (001h)
-0000AE 6E1A               M         movwf   _x
+000086 0E6D               M         movlw   low (06Dh)
+000088 6E81               M         movwf   PORTB
                           M       endif
                           M     endif
-                      00136 
-                      00137 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00030   goto inicio         ; brinca a l
-                            a etiqueta inicio
-                      00138         GOTO?L  _inicio
-                          M         L?GOTO  _inicio
+                      00146 
+                      00147 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00029   PAUSE 1000 
+                      00148         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (R1 + 1) & 8000h
+                          M     endif
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 16
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
+                          M       endif
+                          M     endif
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
+                          M     else
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+00008A 0E03               M         movlw   low ((003E8h) >> 8)
+00008C 6E04               M         movwf   R1 + 1
+                          M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+00008E 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
+                          M         RST?RP
+                          M     if (PREV_ALT != 0)
+                          M         bcf     WDTCON, ADSHR
+                          M PREV_ALT = 0
+                          M     endif
+                          M     if (PREV_BANK != 0)
+                          M         movlb   0
+                          M PREV_BANK = 0
+                          M     endif
+                          M 
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
+                          M       else
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
+                          M         else
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
+                          M           else
+000090 DFBA               M         rcall   PAUSEL
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M     endif
+                      00149 
+                      00150 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00030   PORTB=%01111101    ;SEIS
+                      00151         MOVE?CB 07Dh, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 17
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (PORTB) & 8000h
+                          M     endif
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
+                          M       endif
+                          M     endif
+                          M     if (low (07Dh) == 0)
+                          M         clrf    PORTB
+                          M     else
+                          M       if (low (07Dh) == 255)
+                          M         setf    PORTB
+                          M       else
+000092 0E7D               M         movlw   low (07Dh)
+000094 6E81               M         movwf   PORTB
+                          M       endif
+                          M     endif
+                      00152 
+                      00153 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00031   PAUSE 1000 
+                      00154         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (R1 + 1) & 8000h
+                          M     endif
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
+                          M       endif
+                          M     endif
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
+                          M     else
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+000096 0E03               M         movlw   low ((003E8h) >> 8)
+000098 6E04               M         movwf   R1 + 1
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 18
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+00009A 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
+                          M         RST?RP
+                          M     if (PREV_ALT != 0)
+                          M         bcf     WDTCON, ADSHR
+                          M PREV_ALT = 0
+                          M     endif
+                          M     if (PREV_BANK != 0)
+                          M         movlb   0
+                          M PREV_BANK = 0
+                          M     endif
+                          M 
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
+                          M       else
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
+                          M         else
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
+                          M           else
+00009C DFB4               M         rcall   PAUSEL
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M     endif
+                      00155 
+                      00156 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00032   PORTB=%00000111    ;SIETE
+                      00157         MOVE?CB 007h, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (PORTB) & 8000h
+                          M     endif
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
+                          M       endif
+                          M     endif
+                          M     if (low (007h) == 0)
+                          M         clrf    PORTB
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 19
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     else
+                          M       if (low (007h) == 255)
+                          M         setf    PORTB
+                          M       else
+00009E 0E07               M         movlw   low (007h)
+0000A0 6E81               M         movwf   PORTB
+                          M       endif
+                          M     endif
+                      00158 
+                      00159 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00033   PAUSE 1000 
+                      00160         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (R1 + 1) & 8000h
+                          M     endif
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
+                          M       endif
+                          M     endif
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
+                          M     else
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+0000A2 0E03               M         movlw   low ((003E8h) >> 8)
+0000A4 6E04               M         movwf   R1 + 1
+                          M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+0000A6 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
+                          M         RST?RP
+                          M     if (PREV_ALT != 0)
+                          M         bcf     WDTCON, ADSHR
+                          M PREV_ALT = 0
+                          M     endif
+                          M     if (PREV_BANK != 0)
+                          M         movlb   0
+                          M PREV_BANK = 0
+                          M     endif
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 20
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M 
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
+                          M       else
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
+                          M         else
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
+                          M           else
+0000A8 DFAE               M         rcall   PAUSEL
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M     endif
+                      00161 
+                      00162 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00034   PORTB=%01111111    ;OCHO
+                      00163         MOVE?CB 07Fh, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (PORTB) & 8000h
+                          M     endif
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
+                          M       endif
+                          M     endif
+                          M     if (low (07Fh) == 0)
+                          M         clrf    PORTB
+                          M     else
+                          M       if (low (07Fh) == 255)
+                          M         setf    PORTB
+                          M       else
+0000AA 0E7F               M         movlw   low (07Fh)
+0000AC 6E81               M         movwf   PORTB
+                          M       endif
+                          M     endif
+                      00164 
+                      00165 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00035   PAUSE 1000 
+                      00166         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 21
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (R1 + 1) & 8000h
+                          M     endif
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+                          M PREV_BANK = high (R1 + 1)
+                          M       endif
+                          M     endif
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
+                          M     else
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+0000AE 0E03               M         movlw   low ((003E8h) >> 8)
+0000B0 6E04               M         movwf   R1 + 1
+                          M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+0000B2 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
+                          M         RST?RP
+                          M     if (PREV_ALT != 0)
+                          M         bcf     WDTCON, ADSHR
+                          M PREV_ALT = 0
+                          M     endif
+                          M     if (PREV_BANK != 0)
+                          M         movlb   0
+                          M PREV_BANK = 0
+                          M     endif
+                          M 
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
+                          M       else
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
+                          M         else
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
+                          M           else
+0000B4 DFA8               M         rcall   PAUSEL
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 22
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M     endif
+                      00167 
+                      00168 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00036   PORTB=%01100111    ;NUEVE
+                      00169         MOVE?CB 067h, PORTB
+                          M         CHK?RP  PORTB
+                          M     if (((PORTB) & 8000h) != PREV_ALT)
+                          M       if ((PORTB) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (PORTB) & 8000h
+                          M     endif
+                          M     if ((((PORTB) & 0fffh) > BANKA_END) & (((PORTB) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((PORTB) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (PORTB)
+                          M PREV_BANK = high (PORTB)
+                          M       endif
+                          M     endif
+                          M     if (low (067h) == 0)
+                          M         clrf    PORTB
+                          M     else
+                          M       if (low (067h) == 255)
+                          M         setf    PORTB
+                          M       else
+0000B6 0E67               M         movlw   low (067h)
+0000B8 6E81               M         movwf   PORTB
+                          M       endif
+                          M     endif
+                      00170 
+                      00171 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00037   PAUSE 1000 
+                      00172         PAUSE?C 003E8h
+                          M     if (((003E8h) >> 8) == 0)
+                          M         MOVE?CA 003E8h
+                          M         L?CALL  PAUSE
+                          M     else
+                          M         MOVE?CB (003E8h) >> 8, R1 + 1
+                          M         CHK?RP  R1 + 1
+                          M     if (((R1 + 1) & 8000h) != PREV_ALT)
+                          M       if ((R1 + 1) & 8000h)
+                          M         bsf     WDTCON, ADSHR
+                          M       else
+                          M         bcf     WDTCON, ADSHR
+                          M       endif
+                          M PREV_ALT = (R1 + 1) & 8000h
+                          M     endif
+                          M     if ((((R1 + 1) & 0fffh) > BANKA_END) & (((R1 + 1) & 0fffh) < (0f01h + BANKA_END)))
+                          M       if (((R1 + 1) & 0f00h) != (PREV_BANK << 8))
+                          M         movlb   high (R1 + 1)
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 23
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M PREV_BANK = high (R1 + 1)
+                          M       endif
+                          M     endif
+                          M     if (low ((003E8h) >> 8) == 0)
+                          M         clrf    R1 + 1
+                          M     else
+                          M       if (low ((003E8h) >> 8) == 255)
+                          M         setf    R1 + 1
+                          M       else
+0000BA 0E03               M         movlw   low ((003E8h) >> 8)
+0000BC 6E04               M         movwf   R1 + 1
+                          M       endif
+                          M     endif
+                          M         MOVE?CA low (003E8h)
+0000BE 0EE8               M         movlw   low (low (003E8h))
+                          M         L?CALL  PAUSEL
+                          M         RST?RP
+                          M     if (PREV_ALT != 0)
+                          M         bcf     WDTCON, ADSHR
+                          M PREV_ALT = 0
+                          M     endif
+                          M     if (PREV_BANK != 0)
+                          M         movlb   0
+                          M PREV_BANK = 0
+                          M     endif
+                          M 
+                          M     ifdef USE_LINKER
+                          M         call    PAUSEL
+                          M     else
+                          M       if ((PAUSEL) < 1)
+                          M         call    PAUSEL
+                          M       else
+                          M         if ((PAUSEL) > $)
+                          M         call    PAUSEL
+                          M         else
+                          M           if ((PAUSEL) < ($ - 3ffh))
+                          M         call    PAUSEL
+                          M           else
+0000C0 DFA2               M         rcall   PAUSEL
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M     endif
+                      00173 
+                      00174 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00039   GOTO INICIO
+                      00175         GOTO?L  _INICIO
+                          M         L?GOTO  _INICIO
                           M     ifdef USE_LINKER
                           M         CLRWDT?
                           M     else
-                          M       if ($ == (_inicio))
+                          M       if ($ == (_INICIO))
                           M         CLRWDT?
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 24
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       endif
                           M     endif
                           M 
@@ -824,44 +1369,38 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     WDTCON, ADSHR
                           M PREV_ALT = 0
                           M     endif
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 15
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M     if (PREV_BANK != 0)
                           M         movlb   0
                           M PREV_BANK = 0
                           M     endif
                           M 
                           M     ifdef USE_LINKER
-                          M         goto    _inicio
+                          M         goto    _INICIO
                           M     else
-                          M       if ((_inicio) < 1)
-                          M         goto    _inicio
+                          M       if ((_INICIO) < 1)
+                          M         goto    _INICIO
                           M       else
-                          M         if ((_inicio) > $)
-                          M         goto    _inicio
+                          M         if ((_INICIO) > $)
+                          M         goto    _INICIO
                           M         else
-                          M           if ((_inicio) < ($ - 3ffh))
-                          M         goto    _inicio
+                          M           if ((_INICIO) < ($ - 3ffh))
+                          M         goto    _INICIO
                           M           else
-0000B0 D7EA               M         bra     _inicio
+0000C2 D7C3               M         bra     _INICIO
                           M           endif
                           M         endif
                           M       endif
                           M     endif
-                      00139 
-                      00140 ; C:\USERS\CUATES\DOCUMENTS\GITHUB\MICROCODE\P3\PRACT4.PBP      00032   end
-                      00141         END?    
+                      00176 
+                      00177 ; C:\USERS\UTNC\DOCUMENTS\GITHUB\MICROCODE\P3\7SEG.PBP  00040   END
+                      00178         END?    
   0000                    M     local loop
-0000B2 0003               M loop    sleep
+0000C4 0003               M loop    sleep
                           M         L?GOTO  loop
                           M     ifdef USE_LINKER
                           M         CLRWDT?
                           M     else
-                          M       if ($ == (_45loop))
+                          M       if ($ == (_92loop))
                           M         CLRWDT?
                           M       endif
                           M     endif
@@ -875,33 +1414,33 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         movlb   0
                           M PREV_BANK = 0
                           M     endif
-                          M 
-                          M     ifdef USE_LINKER
-                          M         goto    _45loop
-                          M     else
-                          M       if ((_45loop) < 1)
-                          M         goto    _45loop
-                          M       else
-                          M         if ((_45loop) > $)
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 16
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 25
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M         goto    _45loop
+                          M 
+                          M     ifdef USE_LINKER
+                          M         goto    _92loop
+                          M     else
+                          M       if ((_92loop) < 1)
+                          M         goto    _92loop
+                          M       else
+                          M         if ((_92loop) > $)
+                          M         goto    _92loop
                           M         else
-                          M           if ((_45loop) < ($ - 3ffh))
-                          M         goto    _45loop
+                          M           if ((_92loop) < ($ - 3ffh))
+                          M         goto    _92loop
                           M           else
-0000B4 D7FE               M         bra     _45loop
+0000C6 D7FE               M         bra     _92loop
                           M           endif
                           M         endif
                           M       endif
                           M     endif
-                      00142 
-                      00143         END
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 17
+                      00179 
+                      00180         END
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 26
 
 
 SYMBOL TABLE
@@ -960,7 +1499,7 @@ BANK3_END                         000003FF
 BANK3_START                       00000300
 BANK4_END                         000004FF
 BANK4_START                       00000400
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 18
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 27
 
 
 SYMBOL TABLE
@@ -1019,7 +1558,7 @@ CCP2CON                           00000FBA
 CCP2IE                            00000000
 CCP2IF                            00000000
 CCP2IP                            00000000
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 19
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 28
 
 
 SYMBOL TABLE
@@ -1061,7 +1600,6 @@ CMCON                             00000FB4
 CMIE                              00000006
 CMIF                              00000006
 CMIP                              00000006
-CMPGT?BCL                         
 CRC16EE                           00000002
 CRC16EF                           00000002
 CRC5EE                            00000001
@@ -1078,13 +1616,13 @@ CVREF                             00000004
 CVREN                             00000007
 CVROE                             00000006
 CVRR                              00000005
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 20
+CVRSS                             00000004
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 29
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-CVRSS                             00000004
 D                                 00000005
 DATA_ADDRESS                      00000005
 DC                                00000001
@@ -1109,8 +1647,8 @@ DFN8EE                            00000003
 DFN8EF                            00000003
 DIR                               00000002
 DONE                              00000001
-DUNN                              0000007C
-DUNN5                             0000007E
+DUNN                              00000040
+DUNN5                             00000042
 DUNN_USED                         00000001
 D_A                               00000005
 D_NOT_A                           00000005
@@ -1137,13 +1675,13 @@ ENDP2                             00000005
 ENDP3                             00000006
 EPCONDIS                          00000003
 EPHSHK                            00000004
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 21
+EPINEN                            00000001
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 30
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-EPINEN                            00000001
 EPOUTEN                           00000002
 EPSTALL                           00000000
 FAST                              00000001
@@ -1196,13 +1734,13 @@ HSER2_BAUD                        00000960
 HSER2_BITS                        00000008
 HSER2_RCSTA                       00000090
 HSER2_SPBRG                       00000040
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 22
+HSER2_TXSTA                       00000020
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 31
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-HSER2_TXSTA                       00000020
 HSER_BAUD                         00000960
 HSER_BITS                         00000008
 HSER_PORT                         00000001
@@ -1224,7 +1762,7 @@ IDLEN                             00000007
 INDF0                             00000FEF
 INDF1                             00000FE7
 INDF2                             00000FDF
-INIT                              00000082
+INIT                              00000046
 INT0                              00000000
 INT0E                             00000004
 INT0F                             00000001
@@ -1255,19 +1793,17 @@ IOFS                              00000002
 IPEN                              00000007
 IPR1                              00000F9F
 IPR2                              00000FA2
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 23
+IRCF0                             00000004
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 32
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-IRCF0                             00000004
 IRCF1                             00000005
 IRCF2                             00000006
 IRVST                             00000005
 IVRST                             00000005
-L00001                            0000008A
-L00002                            000000AC
 L?CALL                            
 L?GOTO                            
 LABEL?L                           
@@ -1314,15 +1850,15 @@ LCD_COMMANDUS                     000007D0
 LCD_DATAUS                        00000032
 LCD_DBIT                          00000000
 LCD_DREG                          00000F80
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 24
+LCD_EBIT                          00000003
+LCD_EREG                          00000F81
+LCD_LINES                         00000002
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 33
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
-LCD_EBIT                          00000003
-LCD_EREG                          00000F81
-LCD_LINES                         00000002
 LCD_RSBIT                         00000004
 LCD_RSREG                         00000F80
 LCD_RWBIT                         00000004
@@ -1362,23 +1898,13 @@ MOVE?WB
 MOVE?WT                           
 MOVE?WW                           
 MOVE?WWA                          
-MUL                               00000040
-MUL?BCB                           
-MUL_USED                          00000001
 N                                 00000004
-NEXT?BCL                          
 NOT_A                             00000005
 NOT_ADDRESS                       00000005
 NOT_BOR                           00000000
 NOT_DONE                          00000001
 NOT_IPEN                          00000007
 NOT_PD                            00000002
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 25
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 NOT_POR                           00000001
 NOT_RBPU                          00000007
 NOT_RI                            00000004
@@ -1386,6 +1912,12 @@ NOT_T1SYNC                        00000002
 NOT_T3SYNC                        00000002
 NOT_TO                            00000003
 NOT_W                             00000002
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 34
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 NOT_WRITE                         00000002
 OERR                              00000001
 OESPP                             00000002
@@ -1432,12 +1964,6 @@ PEIE_GIEL                         00000006
 PEN                               00000002
 PGC                               00000006
 PGD                               00000007
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 26
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 PGM                               00000005
 PIDEE                             00000000
 PIDEF                             00000000
@@ -1445,6 +1971,12 @@ PIE1                              00000F9D
 PIE2                              00000FA0
 PIR                               00000F9E
 PIR1                              00000F9E
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 35
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 PIR2                              00000FA1
 PKTDIS                            00000004
 PLUSW0                            00000FEB
@@ -1491,12 +2023,6 @@ R5                                0000000B
 R6                                0000000D
 R7                                0000000F
 R8                                00000011
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 27
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 RA0                               00000000
 RA1                               00000001
 RA2                               00000002
@@ -1504,6 +2030,12 @@ RA3                               00000003
 RA4                               00000004
 RA5                               00000005
 RA6                               00000006
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 36
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 RAM_BANKS                         00000008
 RAM_END                           000007FF
 RAM_START                         00000000
@@ -1550,12 +2082,6 @@ RDSPP                             00000007
 RE0                               00000000
 RE1                               00000001
 RE2                               00000002
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 28
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 RE3                               00000003
 READ_WRITE                        00000002
 RESET_ORG                         00000000
@@ -1563,6 +2089,12 @@ RESUME                            00000002
 RI                                00000004
 RM1                               00000014
 RM2                               00000015
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 37
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 RR1                               00000016
 RR2                               00000017
 RS1                               00000018
@@ -1609,12 +2141,6 @@ SPPIP                             00000007
 SPPOWN                            00000001
 SREN                              00000005
 SSPADD                            00000FC8
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 29
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
@@ -1622,6 +2148,12 @@ SSPEN                             00000005
 SSPIE                             00000003
 SSPIF                             00000003
 SSPIP                             00000003
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 38
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 SSPM0                             00000000
 SSPM1                             00000001
 SSPM2                             00000002
@@ -1668,12 +2200,6 @@ T2CKPS0                           00000000
 T2CKPS1                           00000001
 T2CON                             00000FCA
 T2OUTPS0                          00000003
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 30
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 T2OUTPS1                          00000004
 T2OUTPS2                          00000005
 T2OUTPS3                          00000006
@@ -1681,6 +2207,12 @@ T3CCP1                            00000003
 T3CCP2                            00000006
 T3CKPS0                           00000004
 T3CKPS1                           00000005
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 39
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 T3CON                             00000FB1
 T3NSYNC                           00000002
 T3SYNC                            00000002
@@ -1727,12 +2259,6 @@ TOUTPS1                           00000004
 TOUTPS2                           00000005
 TOUTPS3                           00000006
 TRISA                             00000F92
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 31
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 TRISA0                            00000000
 TRISA1                            00000001
 TRISA2                            00000002
@@ -1740,6 +2266,12 @@ TRISA3                            00000003
 TRISA4                            00000004
 TRISA5                            00000005
 TRISA6                            00000006
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 40
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 TRISB                             00000F93
 TRISB0                            00000000
 TRISB1                            00000001
@@ -1786,12 +2318,6 @@ TXIF                              00000004
 TXIP                              00000004
 TXREG                             00000FAD
 TXSTA                             00000FAC
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 32
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 UA                                00000001
 UADDR                             00000F6E
 UCFG                              00000F6F
@@ -1799,6 +2325,12 @@ UCON                              00000F6D
 UEIE                              00000F6B
 UEIR                              00000F6A
 UEP0                              00000F70
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 41
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 UEP1                              00000F71
 UEP10                             00000F7A
 UEP11                             00000F7B
@@ -1845,12 +2377,6 @@ WREG                              00000FE8
 WREN                              00000002
 WRERR                             00000003
 WRSPP                             00000006
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 33
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 WS0                               00000000
 WS1                               00000001
 WS2                               00000002
@@ -1858,6 +2384,12 @@ WS3                               00000003
 WUE                               00000001
 Z                                 00000002
 _BORV_0_2L                        000000E7
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 42
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _BORV_1_2L                        000000EF
 _BORV_2_2L                        000000F7
 _BORV_3_2L                        000000FF
@@ -1904,12 +2436,6 @@ _EBTR0_ON_7L                      000000FE
 _EBTR1_OFF_7L                     000000FF
 _EBTR1_ON_7L                      000000FD
 _EBTR2_OFF_7L                     000000FF
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 34
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
@@ -1917,6 +2443,12 @@ _EBTRB_OFF_7H                     000000FF
 _EBTRB_ON_7H                      000000BF
 _FCMEN_OFF_1H                     000000BF
 _FCMEN_ON_1H                      000000FF
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 43
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _FOSC_ECIO_EC_1H                  000000F4
 _FOSC_ECPLLIO_EC_1H               000000F6
 _FOSC_ECPLL_EC_1H                 000000F7
@@ -1941,6 +2473,7 @@ _IDLOC6                           00200006
 _IDLOC7                           00200007
 _IESO_OFF_1H                      0000007F
 _IESO_ON_1H                       000000FF
+_INICIO                           0000004A
 _LPT1OSC_OFF_3H                   000000FB
 _LPT1OSC_ON_3H                    000000FF
 _LVP_OFF_4L                       000000FB
@@ -1963,18 +2496,18 @@ _PWRT_OFF_2L                      000000FF
 _PWRT_ON_2L                       000000FE
 _STVREN_OFF_4L                    000000FE
 _STVREN_ON_4L                     000000FF
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 35
-
-
-SYMBOL TABLE
-  LABEL                             VALUE 
-
 _TRISH                            00000F94
 _TRISL                            00000F93
 _USBDIV_1_1L                      000000DF
 _USBDIV_2_1L                      000000FF
 _USBMEMORYADDRESS                 00000400
 _USED                             00000001
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 44
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
 _VREGEN_OFF_2L                    000000DF
 _VREGEN_ON_2L                     000000FF
 _WDTPS_1024_2H                    000000F5
@@ -2012,14 +2545,12 @@ _WRTD_ON_6H                       0000007F
 _XINST_OFF_4L                     000000BF
 _XINST_ON_4L                      000000FF
 __18F4550                         00000001
-_inicio                           00000086
-_x                                0000001A
-main                              00000082
+main                              00000046
 pauseloop                         00000008
 pauseusdone                       0000003E
 pauseush                          00000030
 pauseusloop                       0000002C
-MPASM  5.49                        PRACT4.ASM   7-12-2018  20:02:07         PAGE 36
+MPASM  5.49                          7SEG.ASM   7-16-2018  14:02:13         PAGE 45
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
@@ -2027,13 +2558,14 @@ MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 
 0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXX----------
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXX-------- ---------------- ---------------- ----------------
 0000 : XXXXXXXX-------- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:   190
-Program Memory Bytes Free: 32578
+Program Memory Bytes Used:   208
+Program Memory Bytes Free: 32560
 
 
 Errors   :     0
